@@ -1,0 +1,2 @@
+Este arquivo foi criado diretamente no GitHub.
+Linha adicionada diretamente na main via GitHub.

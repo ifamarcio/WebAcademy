@@ -1,0 +1,2 @@
+Arquivo novo criado na branch nova-feature
+Nova edição feita localmente após merge com a main.
