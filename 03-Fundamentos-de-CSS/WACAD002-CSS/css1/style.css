@@ -1,0 +1,12 @@
+.caixa {
+    background-color: #dcdcdc;       /* Cor de fundo cinza claro */
+    width: 500px;                     /* Largura da caixa */
+    margin: 50px auto;                /* Centraliza horizontalmente */
+    padding: 30px;                    /* Espaçamento interno */
+    border: 10px solid black;         /* Borda preta grossa */
+    border-radius: 0  80px 0 80px;              /* Cantos arredondados */
+    font-family: Arial, sans-serif;  /* Fonte mais moderna */
+    font-size: 18px;                  /* Tamanho da letra */
+    text-align: justify;             /* Justifica o texto */
+  }
+  
