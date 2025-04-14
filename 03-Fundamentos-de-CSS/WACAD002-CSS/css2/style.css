@@ -1,0 +1,49 @@
+/* Zera margens e define box-sizing para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilos para o body */
+  body {
+    font-family: "Georgia", serif;
+    color: #ffffff; /* Texto branco */
+    /* Fundo: usa a imagem da Nebulosa do Anel salva localmente (nebulosa.jpg) */
+    background: url('nebulosa.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+  }
+  
+  /* Container centraliza a caixa de texto verticalmente e a posiciona à esquerda */
+  .container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-left: 60px;
+  }
+  
+  /* Caixa de texto estilizada */
+  .caixa-texto {
+    background-color: rgba(0, 0, 0, 0.8);  /* Fundo preto translúcido */
+    color: #ffffff;
+    padding: 40px 30px;                     /* Aumenta o espaçamento interno */
+    width: 400px;                           /* Largura maior para a caixa */
+    border: 6px solid #df9040;              /* Borda alaranjada */
+    border-radius: 30px;                    /* Bordas arredondadas uniformemente */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);  /* Sombra para destaque */
+  }
+  
+  /* Título da caixa */
+  .caixa-texto h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  /* Parágrafo */
+  .caixa-texto p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
