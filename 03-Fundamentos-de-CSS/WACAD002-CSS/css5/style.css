@@ -1,0 +1,152 @@
+/* === RESET e BASE === */
+* {
+    box-sizing: border-box;
+  }
+  
+  html {
+    font: 1.2em/1.4 Arial, Helvetica, sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0 0 1em;
+  }
+  
+  /* === HEADER === */
+  header {
+    background-color: #333;
+    color: #fff;
+    border: 5px solid #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 1em;
+  }
+  
+  header .title {
+    font-size: 150%;
+    font-style: italic;
+    font-weight: bold;
+  }
+  
+  header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  header nav ul li {
+    margin-left: 10px;
+  }
+  
+  header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-top: 1px solid #999;
+  }
+  
+  /* === MOBILE LAYOUT (padrão) === */
+  main {
+    padding: 0 1em;
+  }
+  
+  article, .sidebar {
+    margin-bottom: 1em;
+  }
+  
+  .cards {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .cards li {
+    border: 5px solid #000;
+    margin-bottom: 1em;
+  }
+  
+  .cards h2 {
+    background-color: #333;
+    color: #fff;
+    margin: 0;
+    padding: 0.5em 1em;
+  }
+  
+  .cards .inner {
+    padding: 0.5em 1em;
+  }
+  
+  .sidebar {
+    background-color: #333;
+    border: 5px solid #000;
+    padding: 1em;
+    color: #fff;
+  }
+  
+  /* === DESKTOP LAYOUT (≥768px) === */
+  @media (min-width: 768px) {
+    /* Layout em Grid: article (esquerda), sidebar (direita) */
+    main {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-gap: 20px;
+      padding: 0 2em;
+    }
+  
+    article {
+      display: grid;
+      grid-template-rows: auto;
+      grid-gap: 20px;
+    }
+  
+    /* Layout dos cards em 3 colunas e 2 linhas */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+    }
+  
+    .cards li {
+      margin-bottom: 0;
+    }
+  
+    .cards li:nth-child(1) {
+      grid-column: 1;
+      grid-row: 1;
+    }
+  
+    .cards li:nth-child(2) {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  
+    .cards li:nth-child(3) {
+      grid-column: 3;
+      grid-row: 1;
+    }
+  
+    .cards li:nth-child(4) {
+      grid-column: 1;
+      grid-row: 2;
+    }
+  
+    .cards li:nth-child(5) {
+      grid-column: 2;
+      grid-row: 2;
+    }
+  
+    /* Sidebar ajustada como retângulo maior */
+    .sidebar {
+      min-height: 400px;
+    }
+  
+    .site-footer {
+      text-align: center;
+      padding: 1em;
+      background-color: #333;
+      color: #fff;
+    }
+  }
+  
