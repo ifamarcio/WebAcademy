@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gerador de Histórias Aleatórias</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Gerador de Histórias Aleatórias</h1>
+
+  <div>
+    <label for="customName">Digite seu nome:</label>
+    <input id="customName" type="text" placeholder="Ex: Márcio" />
+  </div>
+
+  <div>
+    <label><input type="radio" name="unit" id="us" checked /> US</label>
+    <label><input type="radio" name="unit" id="uk" /> UK</label>
+  </div>
+
+  <button class="randomize">Gerar História</button>
+
+  <p class="story" style="visibility: hidden;"></p>
+
+  <script src="main.js"></script>
+</body>
+</html>
