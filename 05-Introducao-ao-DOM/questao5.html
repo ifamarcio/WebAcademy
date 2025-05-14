@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Questão 5 - DOM</title>
+  <style>
+    .cold {
+      color: lightblue;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Lista de Compras</h1>
+
+  <h3>Itens Prioritários</h3>
+  <ul id="lista-itens">
+    <li class="hot">Arroz</li>
+    <li>Feijão</li>
+    <li class="hot">Leite</li>
+    <li>Café</li>
+  </ul>
+
+  <h3>Itens Secundários</h3>
+  <ul id="lista-itens-2">
+    <li class="hot">Biscoito</li>
+    <li>Sabonete</li>
+    <li>Shampoo</li>
+    <li class="hot">Papel Higiênico</li>
+  </ul>
+
+  <script>
+    const itens2 = document.querySelectorAll('#lista-itens-2 li');
+
+    itens2.forEach(li => {
+      // i) Pintar de roxo
+      li.style.color = 'purple';
+
+      // ii) Trocar classe "hot" por "cold"
+      if (li.classList.contains('hot')) {
+        li.classList.replace('hot', 'cold');
+      }
+    });
+  </script>
+
+</body>
+</html>
