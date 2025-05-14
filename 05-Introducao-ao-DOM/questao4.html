@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Questão 4 - DOM</title>
+  <style>
+    .lista {
+      color: darkgreen;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Lista de Compras</h1>
+
+  <h3>Itens Prioritários</h3>
+  <ul id="lista-itens">
+    <li class="hot">Arroz</li>
+    <li>Feijão</li>
+    <li class="hot">Leite</li>
+    <li>Café</li>
+  </ul>
+
+  <h3>Itens Secundários</h3>
+  <ul id="lista-itens-2">
+    <li class="hot">Biscoito</li>
+    <li>Sabonete</li>
+    <li>Shampoo</li>
+    <li class="hot">Papel Higiênico</li>
+  </ul>
+
+  <script>
+    // a) Mudar fundo do <h1> para azul
+    const h1 = document.querySelector('h1');
+    h1.style.backgroundColor = 'blue';
+
+    // b) Adicionar a classe "lista" ao primeiro <h3>
+    const h3 = document.querySelector('h3');
+    h3.classList.add('lista');
+
+    // c) Adicionar negrito aos <li> com classe 'hot' da lista #lista-itens
+    const hotItems = document.querySelectorAll('#lista-itens li.hot');
+    hotItems.forEach(li => {
+      li.classList.add('bold');
+    });
+  </script>
+
+</body>
+</html>
