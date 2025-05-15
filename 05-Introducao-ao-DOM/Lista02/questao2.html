@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Questão 2 - DOM</title>
+</head>
+<body>
+
+  <p id="lista-titulo">Lista de Itens</p>
+
+  <ul id="lista-itens-1">
+    <li id="one">Item A</li>
+    <li id="two">Item B</li>
+    <li id="three">Item C</li>
+  </ul>
+
+  <script>
+    // i) Altera com nodeValue
+    const titulo = document.getElementById('lista-titulo');
+    titulo.firstChild.nodeValue = 'Nova Lista de Itens';
+
+    // ii) Altera texto com textContent
+    const item2 = document.getElementById('two');
+    item2.textContent = 'Item B Atualizado';
+  </script>
+
+</body>
+</html>

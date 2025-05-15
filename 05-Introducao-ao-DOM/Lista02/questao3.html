@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Questão 3 - DOM</title>
+</head>
+<body>
+
+  <ul id="lista-itens-1">
+    <li id="one">Item A</li>
+    <li id="two">Item B</li>
+    <li id="three">Item C</li>
+  </ul>
+
+  <script>
+    const lista = document.getElementById('lista-itens-1');
+    const novoItem = document.createElement('li');
+    novoItem.textContent = 'Item D (novo)';
+    lista.appendChild(novoItem);
+  </script>
+
+</body>
+</html>

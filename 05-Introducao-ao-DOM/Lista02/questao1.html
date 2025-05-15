@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Questão 1 - DOM</title>
+</head>
+<body>
+
+  <ul id="lista-itens-1">
+    <li id="one">Item A</li>
+    <li id="two">Item B</li>
+    <li id="three">Item C</li>
+  </ul>
+
+  <script>
+    const lista = document.getElementById('lista-itens-1');
+
+    console.log('Primeiro filho:', lista.firstElementChild);
+    console.log('Último filho:', lista.lastElementChild);
+    console.log('Pai da lista:', lista.parentElement);
+    console.log('Todos os filhos:');
+    lista.children.forEach ? lista.children.forEach(el => console.log(el)) : [...lista.children].forEach(el => console.log(el));
+
+    const itemTwo = document.getElementById('two');
+    console.log('Irmão anterior:', itemTwo.previousElementSibling);
+    console.log('Irmão seguinte:', itemTwo.nextElementSibling);
+  </script>
+
+</body>
+</html>

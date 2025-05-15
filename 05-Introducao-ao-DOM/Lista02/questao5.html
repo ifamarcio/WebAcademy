@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Questão 5 - Lista Interativa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+
+    ul {
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Minha Lista de Tarefas</h1>
+
+  <input type="text" id="novo-item" placeholder="Digite um item">
+  <button id="adicionar">Adicionar</button>
+  <button id="remover">Remover último item</button>
+
+  <ul id="lista">
+    <li>Exemplo 1</li>
+    <li>Exemplo 2</li>
+  </ul>
+
+  <script>
+    const btnAdd = document.getElementById('adicionar');
+    const btnRemove = document.getElementById('remover');
+    const input = document.getElementById('novo-item');
+    const lista = document.getElementById('lista');
+
+    btnAdd.addEventListener('click', () => {
+      const texto = input.value.trim();
+      if (texto !== '') {
+        const novoItem = document.createElement('li');
+        novoItem.textContent = texto;
+        lista.appendChild(novoItem);
+        input.value = '';
+      }
+    });
+
+    btnRemove.addEventListener('click', () => {
+      if (lista.children.length > 0) {
+        lista.removeChild(lista.lastElementChild);
+      }
+    });
+  </script>
+
+</body>
+</html>
