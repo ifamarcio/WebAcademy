@@ -1,1 +1,13 @@
+{
+  "name": "node1-servidor-arquivos",
+  "version": "1.0.0",
+  "description": "Servidor que lista arquivos de um diretório",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js ./"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
 
