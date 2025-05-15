@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Produtos - Minha Loja</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <div class="container">
+      <a class="navbar-brand" href="#">Minha Loja</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="produtos.html">Produtos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Sair</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Conteúdo -->
+  <div class="container">
+    <h2 class="mb-4">Produtos Disponíveis</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+
+      <!-- Produto Exemplo -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Produto X">
+          <div class="card-body">
+            <h5 class="card-title">Produto X</h5>
+            <p class="card-text">R$ 99,90</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adicione mais produtos aqui se quiser -->
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
