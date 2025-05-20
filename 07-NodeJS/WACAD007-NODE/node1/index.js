@@ -1,10 +1,13 @@
-
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-// Lê o diretório passado como argumento
+// Determina o ambiente: development ou production
+const env = process.env.NODE_ENV || 'development';
+require('dotenv').config({ path: `.env.${env}` });
+
 const dir = process.argv[2] || __dirname;
+const PORT = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
   fs.readdir(dir, (err, files) => {
@@ -24,6 +27,6 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(3333, () => {
-  console.log(`Servidor rodando em http://localhost:3333`);
+server.listen(PORT, () => {
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
