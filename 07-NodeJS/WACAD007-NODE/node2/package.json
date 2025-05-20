@@ -1,0 +1,16 @@
+{
+  "name": "node2-esmodules",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Servidor usando ES Modules para listar arquivos",
+  "scripts": {
+    "start": "node index.mjs ./",
+    "start:dev": "nodemon index.mjs ./"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
