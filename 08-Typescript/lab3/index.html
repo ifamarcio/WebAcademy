@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Carrinho de Compras</title>
+  <style>
+    body { font-family: Arial; max-width: 800px; margin: auto; }
+    form, .stats, table { margin-top: 1.5rem; }
+    input, select { display: block; margin-bottom: 10px; width: 100%; }
+    table { width: 100%; border-collapse: collapse; }
+    td, th { padding: 8px; border: 1px solid #ccc; text-align: left; }
+    .stats { background: #f9f9f9; padding: 10px; }
+  </style>
+</head>
+<body>
+
+  <h1>Carrinho de Compras</h1>
+
+  <form id="form-produto">
+    <select id="tipo">
+      <option value="tv">TV</option>
+      <option value="celular">Celular</option>
+      <option value="bicicleta">Bicicleta</option>
+    </select>
+    <input type="text" id="modelo" placeholder="Modelo" required />
+    <input type="text" id="f1" placeholder="Resolução / Memória / Aro" required />
+    <input type="text" id="fabricante" placeholder="Fabricante" required />
+    <input type="number" id="valor" placeholder="Valor (R$)" step="0.01" required />
+    <button type="submit">Adicionar</button>
+  </form>
+
+  <div class="stats">
+    <strong>Total de itens:</strong> <span id="total-itens">0</span><br />
+    <strong>Valor total:</strong> R$ <span id="valor-total">0.00</span>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Modelo</th>
+        <th>Específico</th>
+        <th>Fabricante</th>
+        <th>Valor (R$)</th>
+      </tr>
+    </thead>
+    <tbody id="tabela-produtos"></tbody>
+  </table>
+
+  <script src="app.js"></script>
+</body>
+</html>
