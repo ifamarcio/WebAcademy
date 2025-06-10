@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Turma - Estatísticas</title>
+  <style>
+    body {
+      font-family: Arial;
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+    input {
+      margin-bottom: 0.5rem;
+      width: 100%;
+    }
+    table {
+      width: 100%;
+      margin-top: 1rem;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+    }
+    .estatisticas {
+      margin-top: 1rem;
+      background-color: #f3f3f3;
+      padding: 1rem;
+    }
+    button {
+      margin: 0 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Cadastro de Alunos</h1>
+
+  <form id="form-aluno">
+    <input type="hidden" id="aluno-id" />
+    <input type="text" id="nome" placeholder="Nome completo" required />
+    <input type="number" id="idade" placeholder="Idade" required />
+    <input type="number" id="altura" placeholder="Altura (m)" step="0.01" required />
+    <input type="number" id="peso" placeholder="Peso (kg)" step="0.01" required />
+    <button type="submit">Salvar</button>
+  </form>
+
+  <div class="estatisticas">
+    <strong>Estatísticas da Turma:</strong><br />
+    Número de alunos: <span id="estat-num"></span><br />
+    Média de idades: <span id="estat-idade"></span><br />
+    Média de alturas: <span id="estat-altura"></span><br />
+    Média de pesos: <span id="estat-peso"></span>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Altura</th>
+        <th>Peso</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody id="tabela-alunos"></tbody>
+  </table>
+
+  <script src="app.js"></script>
+</body>
+</html>
