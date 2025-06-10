@@ -2,16 +2,35 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Lembretes - TypeScript</title>
+  <title>To Do List - TypeScript</title>
+  <style>
+    body {
+      font-family: Arial;
+      max-width: 600px;
+      margin: 2rem auto;
+    }
+    input, textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    li {
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-right: 10px;
+    }
+  </style>
 </head>
 <body>
-  <h1>To Do List</h1>
-
+  <h1>Lembretes</h1>
   <form id="form-lembrete">
     <input type="text" id="titulo" placeholder="Título" required />
     <input type="datetime-local" id="dataLimite" />
     <textarea id="descricao" placeholder="Descrição (opcional)"></textarea>
-    <button type="submit">Adicionar Lembrete</button>
+    <button type="submit">Adicionar</button>
   </form>
 
   <ul id="lista-lembretes"></ul>
