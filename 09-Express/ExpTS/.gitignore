@@ -1,4 +1,15 @@
-node_modules
-dist
+# Ignora node_modules
+node_modules/
+
+# Ignora arquivos compilados TypeScript
+dist/
+
+# Arquivo de variáveis sensíveis
 .env
-logs
+
+# Pasta de logs gerada pelo middleware
+logs/
+
+# Ignora arquivos de cache do sistema
+.DS_Store
+Thumbs.db
