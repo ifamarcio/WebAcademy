@@ -22,17 +22,22 @@ routes.get('/lorem/:qtd', (req, res) => {
   res.send(`<pre>${texto}</pre>`);
 });
 
-// Rotas Handlebars
-routes.get('/hb1', (_req, res) => {
-  res.render('hb1');
-});
+// Handlebars: hb1, hb2, hb3
+routes.get('/hb1', (_req, res) => res.render('hb1'));
+routes.get('/hb2', (_req, res) => res.render('hb2'));
+routes.get('/hb3', (_req, res) => res.render('hb3'));
 
-routes.get('/hb2', (_req, res) => {
-  res.render('hb2');
-});
+// ✅ NOVA ROTA HB4 com helper
+routes.get('/hb4', (_req, res) => {
+  const tecnologias = [
+    { name: 'Express', type: 'Framework', poweredByNodejs: true },
+    { name: 'React', type: 'Biblioteca', poweredByNodejs: false },
+    { name: 'NestJS', type: 'Framework', poweredByNodejs: true },
+    { name: 'Next.js', type: 'Framework', poweredByNodejs: true },
+    { name: 'Laravel', type: 'Framework', poweredByNodejs: false }
+  ];
 
-routes.get('/hb3', (_req, res) => {
-  res.render('hb3');
+  res.render('hb4', { tecnologias });
 });
 
 export default routes;
