@@ -1,43 +1,44 @@
 import { Router } from 'express';
-import { LoremIpsum } from 'lorem-ipsum';
+import MainController from '../controllers/MainController.js';
 
+// Criação do roteador do Express
 const routes = Router();
 
-routes.get('/', (req, res) => {
-  res.send('<h1>Hello from Express + TS!</h1>');
-});
+/**
+ * Rota principal "/"
+ * Exibe uma mensagem simples em HTML
+ */
+routes.get('/', MainController.home);
 
-routes.get('/lorem/:qtd', (req, res) => {
-  const qtd = parseInt(req.params.qtd);
-  if (isNaN(qtd) || qtd <= 0) {
-    return res.status(400).json({ error: 'Informe um número válido.' });
-  }
+/**
+ * Rota dinâmica "/lorem/:qtd"
+ * Gera a quantidade de parágrafos de Lorem Ipsum com base no parâmetro
+ */
+routes.get('/lorem/:qtd', MainController.lorem);
 
-  const lorem = new LoremIpsum({
-    sentencesPerParagraph: { max: 8, min: 4 },
-    wordsPerSentence: { max: 16, min: 4 }
-  });
+/**
+ * Rota "/hb1"
+ * Renderiza a view hb1.handlebars
+ */
+routes.get('/hb1', MainController.hb1);
 
-  const texto = lorem.generateParagraphs(qtd);
-  res.send(`<pre>${texto}</pre>`);
-});
+/**
+ * Rota "/hb2"
+ * Renderiza a view hb2.handlebars
+ */
+routes.get('/hb2', MainController.hb2);
 
-// Handlebars: hb1, hb2, hb3
-routes.get('/hb1', (_req, res) => res.render('hb1'));
-routes.get('/hb2', (_req, res) => res.render('hb2'));
-routes.get('/hb3', (_req, res) => res.render('hb3'));
+/**
+ * Rota "/hb3"
+ * Renderiza a view hb3.handlebars
+ */
+routes.get('/hb3', MainController.hb3);
 
-// ✅ NOVA ROTA HB4 com helper
-routes.get('/hb4', (_req, res) => {
-  const tecnologias = [
-    { name: 'Express', type: 'Framework', poweredByNodejs: true },
-    { name: 'React', type: 'Biblioteca', poweredByNodejs: false },
-    { name: 'NestJS', type: 'Framework', poweredByNodejs: true },
-    { name: 'Next.js', type: 'Framework', poweredByNodejs: true },
-    { name: 'Laravel', type: 'Framework', poweredByNodejs: false }
-  ];
+/**
+ * Rota "/hb4"
+ * Renderiza a view hb4.handlebars com filtro via helper "ifNode"
+ */
+routes.get('/hb4', MainController.hb4);
 
-  res.render('hb4', { tecnologias });
-});
-
+// Exporta todas as rotas configuradas
 export default routes;
