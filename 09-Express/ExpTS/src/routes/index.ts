@@ -1,44 +1,11 @@
 import { Router } from 'express';
-import MainController from '../controllers/MainController.js';
+import * as mainController from '../controllers/mainController';
 
-// Criação do roteador do Express
-const routes = Router();
+export const router = Router();
 
-/**
- * Rota principal "/"
- * Exibe uma mensagem simples em HTML
- */
-routes.get('/', MainController.home);
-
-/**
- * Rota dinâmica "/lorem/:qtd"
- * Gera a quantidade de parágrafos de Lorem Ipsum com base no parâmetro
- */
-routes.get('/lorem/:qtd', MainController.lorem);
-
-/**
- * Rota "/hb1"
- * Renderiza a view hb1.handlebars
- */
-routes.get('/hb1', MainController.hb1);
-
-/**
- * Rota "/hb2"
- * Renderiza a view hb2.handlebars
- */
-routes.get('/hb2', MainController.hb2);
-
-/**
- * Rota "/hb3"
- * Renderiza a view hb3.handlebars
- */
-routes.get('/hb3', MainController.hb3);
-
-/**
- * Rota "/hb4"
- * Renderiza a view hb4.handlebars com filtro via helper "ifNode"
- */
-routes.get('/hb4', MainController.hb4);
-
-// Exporta todas as rotas configuradas
-export default routes;
+router.get('/', mainController.home);
+router.get('/lorem/:qtd?', mainController.lorem);
+router.get('/hb1', mainController.hb1);
+router.get('/hb2', mainController.hb2);
+router.get('/hb3', mainController.hb3);
+router.get('/hb4', mainController.hb4);
