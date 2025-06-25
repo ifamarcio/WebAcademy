@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { LoremIpsum } from 'lorem-ipsum';
-
+import { getLorem } from '../controllers/LoremController';
+router.get('/lorem/:num', getLorem);
 export default class MainController {
   static home(_req: Request, res: Response) {
     res.send('<h1>Hello from Express + TS!</h1>');
