@@ -1,24 +1,50 @@
 import { Request, Response } from 'express';
-import { products, Product } from '../models/Product';
+import { Product } from '../models/product';
+
+let products: Product[] = [
+  { id: 1, name: 'Samsung Galaxy S23', price: 3600 },
+  { id: 2, name: 'iPhone 14', price: 3500 },
+  { id: 3, name: 'Split Samsung Inverter', price: 2990 }
+];
 
 export const listProducts = (req: Request, res: Response) => {
-  res.render('products', { products });
+  res.render('product/index', { products });
 };
 
-export const showForm = (req: Request, res: Response) => {
-  res.render('productForm');
+export const showCreateForm = (req: Request, res: Response) => {
+  res.render('product/create');
 };
 
-export const addProduct = (req: Request, res: Response) => {
+export const createProduct = (req: Request, res: Response) => {
   const { name, price } = req.body;
-  const id = products.length + 1;
-  products.push({ id, name, price: Number(price) });
+  const newProduct = {
+    id: Date.now(),
+    name,
+    price: Number(price)
+  };
+  products.push(newProduct);
+  res.redirect('/products');
+};
+
+export const showEditForm = (req: Request, res: Response) => {
+  const id = Number(req.params.id);
+  const product = products.find(p => p.id === id);
+  res.render('product/edit', { product });
+};
+
+export const updateProduct = (req: Request, res: Response) => {
+  const id = Number(req.params.id);
+  const { name, price } = req.body;
+  const product = products.find(p => p.id === id);
+  if (product) {
+    product.name = name;
+    product.price = Number(price);
+  }
   res.redirect('/products');
 };
 
 export const deleteProduct = (req: Request, res: Response) => {
   const id = Number(req.params.id);
-  const index = products.findIndex((p) => p.id === id);
-  if (index !== -1) products.splice(index, 1);
+  products = products.filter(p => p.id !== id);
   res.redirect('/products');
 };
