@@ -18,4 +18,3 @@ router.post('/products/edit/:id', updateProduct);
 router.post('/products/delete/:id', deleteProduct);
 
 export default router;
-
