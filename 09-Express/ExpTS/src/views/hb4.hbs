@@ -1,0 +1,10 @@
+<h1>Tecnologias Node.js</h1>
+<ul class="list-group">
+  {{#each tecnologias}}
+    {{#if poweredByNodejs}}
+      <li class="list-group-item">
+        <strong>{{name}}</strong> — {{type}}
+      </li>
+    {{/if}}
+  {{/each}}
+</ul>
